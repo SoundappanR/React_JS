@@ -3,7 +3,8 @@ import "./Eden1.css";
 import { Eden2 } from "./Eden2";
 import edenlogo from "../Images/kirikalan.PNG";
 export const NameContext = React.createContext();
-// export const FullNameContext = React.createContext();
+export const FullNameContext = React.createContext();
+
 export function Eden1() {
   const eden2fn = () => {
     if (name === "") {
@@ -17,9 +18,16 @@ export function Eden1() {
   const [nameErr, setNameErr] = useState(false);
   const [fullName, setFullName] = useState("");
 
+  // const value1 = {
+  //   name: name,
+  //   fullName: fullName,
+  // };
+
   return next ? (
     <NameContext.Provider value={name}>
-      <Eden2 />
+      <FullNameContext.Provider value={fullName}>
+        <Eden2 />
+      </FullNameContext.Provider>
     </NameContext.Provider>
   ) : (
     <div class="pagewrapper">

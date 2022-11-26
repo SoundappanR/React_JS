@@ -7,10 +7,12 @@ import "./Eden4.css";
 import edenlogo from "../Images/kirikalan.PNG";
 import { useContext } from "react";
 import { NameContext } from "./Eden1.jsx";
+import { FullNameContext } from "./Eden1.jsx";
 import { Eden1 } from "./Eden1.jsx";
 
 export function Eden4() {
   const name1 = useContext(NameContext);
+  const name2 = useContext(FullNameContext);
   const [pageone, setPageOne] = useState(false);
   const eden5fn = () => {
     setPageOne(true);
@@ -32,7 +34,7 @@ export function Eden4() {
           <div class="line"></div>
           <div class="dot">4</div>
         </div>
-        <h1>Hellowwww -- {name1}</h1>
+        <h1>Hellowwww -- {name2}</h1>
         <h4 id="light-font" class="pagewrapper">
           vatta seyalalar {name1} pesuren
         </h4>
